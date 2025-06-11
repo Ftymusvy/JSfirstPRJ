@@ -1,0 +1,42 @@
+# Compiled class files
+*.class
+
+# Logs
+*.log
+
+# Eclipse IDE
+.settings/
+.eclipse/
+*.iml
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+out/
+
+# NetBeans
+nbproject/private/
+
+# JRebel
+.rebel/
+
+# Java Web Projects (Maven/Gradle)
+target/
+build/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Maven wrapper
+.mvn/
+.mvn/wrapper/
+
+# Gradle wrapper
+.gradle/
+build/
+
+# IntelliJ specific
+*.ipr
+*.iws
