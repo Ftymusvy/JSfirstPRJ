@@ -7,10 +7,23 @@ let name = "fati";
 let person ={
     name : "fati" 
 }
-console.log(person.name)
-console.log(person["name"])
+console.log(person.name);
+console.log(person["name"]);
 
+// array
+let users = ["ali" ,"fatma"];
+users[2]= 2
+console.log(users[0]);
 
+//function
+function greet(name){
+    console.log('Hello  ' + name);
+}
+
+greet("ahmad");
 // let nameUser = "neon";
 console.log("neon");
 console.log(2+2);
+
+
+
