@@ -46,3 +46,19 @@ let hour = 12;
         console.log('good morning');
 }else 
 console.log('hello');
+
+// switch case
+
+let role = "guest";
+
+switch (role) {
+    case "guest": 
+        console.log('wellcome');
+        break;
+    case "admin": 
+        console.log('admin user');
+        break;
+
+    default:
+        console.log('unknown  user');  
+}
