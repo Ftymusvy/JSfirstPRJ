@@ -39,3 +39,10 @@ let buy = ProductCount > 0 && credit>ProductPrice;
 console.log(buy);
 //logical OR
 // not
+
+// if 
+let hour = 12;
+ if (hour>=6 && hour<12) {   
+        console.log('good morning');
+}else 
+console.log('hello');
