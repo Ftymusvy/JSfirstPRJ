@@ -29,3 +29,13 @@ let authenticated = false;
 let bottonText = authenticated === true ? "dashboard" : "login" ;
 console.log(bottonText)
 
+//logical AND
+// &&
+let ProductCount = 3;
+let ProductPrice = 1000;
+let credit = 1200;
+let buy = ProductCount > 0 && credit>ProductPrice;
+
+console.log(buy);
+//logical OR
+// not
