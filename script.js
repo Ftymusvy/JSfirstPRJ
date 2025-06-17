@@ -71,15 +71,39 @@
 // }
 
 //object oriented programing
-let circle = {
-  radius: 1,
-  location: {
-    x: 1,
-    y: 1,
-  },
-  isVisible: true,
-  draw: function(){console.log('draw')}
-};
+// let circle = {
+//   radius: 1,
+//   location: {
+//     x: 1,
+//     y: 1,
+//   },
+//   isVisible: true,
+//   draw: function(){console.log('draw')}
+// };
+// circle.draw();
 
+//factory function
+function createCircle(radius) {
+    return{
+        radius ,
+        draw(){console.log('draw')}
+    }
+}
+const mycircle = createCircle(4);
+console.log(mycircle);
 
-circle.draw();
+let circle1 = createCircle(1);
+console.log(circle1)
+
+let circle2 = createCircle(2);
+console.log(circle2)
+
+//constructor function
+function Circle(radius) {
+    this.radius = radius;
+    this.draw = function(){console.log('draw')}
+    
+}
+// تولید ابجکت
+const circle = new Circle(3);
+console.log(circle)
