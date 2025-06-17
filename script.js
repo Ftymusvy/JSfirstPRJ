@@ -114,4 +114,5 @@ const circle = {
 
 circle.color= "red";
 delete circle.radius;
+Object.freeze(circle); 
 console.log(circle);
