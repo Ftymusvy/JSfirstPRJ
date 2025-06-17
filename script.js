@@ -82,28 +82,36 @@
 // };
 // circle.draw();
 
-//factory function
-function createCircle(radius) {
-    return{
-        radius ,
-        draw(){console.log('draw')}
-    }
-}
-const mycircle = createCircle(4);
-console.log(mycircle);
+// //factory function
+// function createCircle(radius) {
+//     return{
+//         radius ,
+//         draw(){console.log('draw')}
+//     }
+// }
+// const mycircle = createCircle(4);
+// console.log(mycircle);
 
-let circle1 = createCircle(1);
-console.log(circle1)
+// let circle1 = createCircle(1);
+// console.log(circle1)
 
-let circle2 = createCircle(2);
-console.log(circle2)
+// let circle2 = createCircle(2);
+// console.log(circle2)
 
-//constructor function
-function Circle(radius) {
-    this.radius = radius;
-    this.draw = function(){console.log('draw')}
+// //constructor function
+// function Circle(radius) {
+//     this.radius = radius;
+//     this.draw = function(){console.log('draw')}
     
+// }
+// // تولید ابجکت
+// const circle = new Circle(3);
+// console.log(circle)
+
+const circle = {
+  radius : 1
 }
-// تولید ابجکت
-const circle = new Circle(3);
-console.log(circle)
+
+circle.color= "red";
+delete circle.radius;
+console.log(circle);
