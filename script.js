@@ -108,11 +108,58 @@
 // const circle = new Circle(3);
 // console.log(circle)
 
-const circle = {
-  radius : 1
-}
+// const circle = {
+//   radius : 1
+// }
 
-circle.color= "red";
-delete circle.radius;
-Object.freeze(circle); 
-console.log(circle);
+// circle.color= "red";
+// delete circle.radius;
+// Object.freeze(circle); 
+// console.log(circle);
+
+
+// value types(primitve):{number , string , boolean, symbol , undifined , null}
+
+
+// refrence types:{object , function , array }
+
+
+const circle = {
+   radius : 1 ,
+   draw(){console.log('draw');}
+ }
+
+//  let circlekey = Object.keys(circle);
+//  console.log(circlekey);
+
+//  if ('draw' in circle){
+//    console.log('yes');
+//    console.log('draw' in circle);
+//  }
+
+//کلون کردن
+const another = {};
+for(let key in circle){
+   another[key] = circle[key]
+}
+console.log(another);
+const another1 = Object.assign({color : 'red'} , circle)
+console.log(another1);
+const another2 = {...circle}
+console.log(another2 );
+
+//string primitve
+const message = " neon ";
+//string object
+const another3 = new String("neon");
+
+// `
+const another4 = `neon
+    coding uis cool`;
+console.log(another4);
+
+
+//place holder
+let name = 'fati';
+let messg = `Hi ${name}. wellcome`;
+console.log(messg);
