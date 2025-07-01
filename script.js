@@ -167,39 +167,64 @@
 
 //refrence array
 
-const courses = [
-   {id: 1, name: "a"},
-   {id: 2, name:  "b"},
-];
+// const courses = [
+//    {id: 1, name: "a"},
+//    {id: 2, name:  "b"},
+// ];
 
-const result = courses.find((course) => course.id === 1);
-console.log(result);
-
-
-const num = [1,2,3,6]
-
-const maps = num.map(function(value){
-   return value +  2;
-})
-
-console.log(maps);
+// const result = courses.find((course) => course.id === 1);
+// console.log(result);
 
 
-//function declaration
-walk();
-function walk (){
-   console.log('walk');
-}
+// const num = [1,2,3,6]
 
-//function Expression
-let run = function(){
-   console.log('run');
-};
+// const maps = num.map(function(value){
+//    return value +  2;
+// })
+
+// console.log(maps);
+
+
+// //function declaration
+// walk();
+// function walk (){
+//    console.log('walk');
+// }
+
+// //function Expression
+// let run = function(){
+//    console.log('run');
+// };
  
-function sum(...numbers) {
-  return numbers.reduce((acc, val) => acc + val, 0);
-}
+// function sum(...numbers) {
+//   return numbers.reduce((acc, val) => acc + val, 0);
+// }
 
-console.log(sum(1, 2, 3, 4, 5));
+// console.log(sum(1, 2, 3, 4, 5));
 
 
+const person = {
+  fname: "ali",
+  lname: "mohamadi",
+
+  // Getter برای fullName
+  get fullName() {
+    return `${this.fname} ${this.lname}`;
+  },
+
+  // Setter برای fullName
+  set fullName(value) {
+    const parts = value.split(' ');
+    this.fname = parts[0];
+    this.lname = parts[1];
+  }
+};
+
+// دسترسی به fullName از طریق Getter
+console.log(person.fullName);  // "ali mohamadi"
+
+// تغییر دادن fullName از طریق Setter
+person.fullName = "rezaa farhadi";
+
+// بعد از تغییر
+console.log(person.fullName);  // "rezaa farhadi"
