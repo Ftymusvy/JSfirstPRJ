@@ -124,10 +124,10 @@
 // refrence types:{object , function , array }
 
 
-const circle = {
-   radius : 1 ,
-   draw(){console.log('draw');}
- }
+// const circle = {
+//    radius : 1 ,
+//    draw(){console.log('draw');}
+//  }
 
 //  let circlekey = Object.keys(circle);
 //  console.log(circlekey);
@@ -138,28 +138,68 @@ const circle = {
 //  }
 
 //کلون کردن
-const another = {};
-for(let key in circle){
-   another[key] = circle[key]
+// const another = {};
+// for(let key in circle){
+//    another[key] = circle[key]
+// }
+// console.log(another);
+// const another1 = Object.assign({color : 'red'} , circle)
+// console.log(another1);
+// const another2 = {...circle}
+// console.log(another2 );
+
+// //string primitve
+// const message = " neon ";
+// //string object
+// const another3 = new String("neon");
+
+// // `
+// const another4 = `neon
+//     coding uis cool`;
+// console.log(another4);
+
+
+// //place holder
+// let names = 'fati';
+// let messg = `Hi ${names}. wellcome`;
+// console.log(messg);
+
+
+//refrence array
+
+const courses = [
+   {id: 1, name: "a"},
+   {id: 2, name:  "b"},
+];
+
+const result = courses.find((course) => course.id === 1);
+console.log(result);
+
+
+const num = [1,2,3,6]
+
+const maps = num.map(function(value){
+   return value +  2;
+})
+
+console.log(maps);
+
+
+//function declaration
+walk();
+function walk (){
+   console.log('walk');
 }
-console.log(another);
-const another1 = Object.assign({color : 'red'} , circle)
-console.log(another1);
-const another2 = {...circle}
-console.log(another2 );
 
-//string primitve
-const message = " neon ";
-//string object
-const another3 = new String("neon");
+//function Expression
+let run = function(){
+   console.log('run');
+};
+ 
+function sum(...numbers) {
+  return numbers.reduce((acc, val) => acc + val, 0);
+}
 
-// `
-const another4 = `neon
-    coding uis cool`;
-console.log(another4);
+console.log(sum(1, 2, 3, 4, 5));
 
 
-//place holder
-let name = 'fati';
-let messg = `Hi ${name}. wellcome`;
-console.log(messg);
