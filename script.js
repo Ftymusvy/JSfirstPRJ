@@ -226,5 +226,28 @@ console.log(person.fullName);  // "ali mohamadi"
 // تغییر دادن fullName از طریق Setter
 person.fullName = "rezaa farhadi";
 
-// بعد از تغییر
-console.log(person.fullName);  // "rezaa farhadi"
+console.log(person.fullName);  
+
+
+
+// rest operator    
+function sum (...args){
+   console.log(args);
+}
+console.log(sum(1,2,3,4,5,17))
+
+//تغییر this
+
+const video ={
+   title : 'a',
+   tags : ['a' ,'b', 'c'],
+   showTags(){
+      const self = this;
+      this.tags.forEach(function(tag){
+         console.log(self.title, tag);
+      })
+   },
+}
+video.showTags();
+  
+
