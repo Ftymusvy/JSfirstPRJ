@@ -203,51 +203,73 @@
 // console.log(sum(1, 2, 3, 4, 5));
 
 
-const person = {
-  fname: "ali",
-  lname: "mohamadi",
+// const person = {
+//   fname: "ali",
+//   lname: "mohamadi",
 
-  // Getter برای fullName
-  get fullName() {
-    return `${this.fname} ${this.lname}`;
-  },
+//   // Getter برای fullName
+//   get fullName() {
+//     return `${this.fname} ${this.lname}`;
+//   },
 
-  // Setter برای fullName
-  set fullName(value) {
-    const parts = value.split(' ');
-    this.fname = parts[0];
-    this.lname = parts[1];
-  }
-};
+//   // Setter برای fullName
+//   set fullName(value) {
+//     const parts = value.split(' ');
+//     this.fname = parts[0];
+//     this.lname = parts[1];
+//   }
+// };
 
-// دسترسی به fullName از طریق Getter
-console.log(person.fullName);  // "ali mohamadi"
+// // دسترسی به fullName از طریق Getter
+// console.log(person.fullName);  // "ali mohamadi"
 
-// تغییر دادن fullName از طریق Setter
-person.fullName = "rezaa farhadi";
+// // تغییر دادن fullName از طریق Setter
+// person.fullName = "rezaa farhadi";
 
-console.log(person.fullName);  
+// console.log(person.fullName);  
 
 
 
-// rest operator    
-function sum (...args){
-   console.log(args);
-}
-console.log(sum(1,2,3,4,5,17))
+// // rest operator    
+// function sum (...args){
+//    console.log(args);
+// }
+// console.log(sum(1,2,3,4,5,17))
 
-//تغییر this
+// //تغییر this
 
-const video ={
-   title : 'a',
-   tags : ['a' ,'b', 'c'],
-   showTags(){
-      const self = this;
-      this.tags.forEach(function(tag){
-         console.log(self.title, tag);
-      })
-   },
-}
-video.showTags();
+// const video ={
+//    title : 'a',
+//    tags : ['a' ,'b', 'c'],
+//    showTags(){
+//       const self = this;
+//       this.tags.forEach(function(tag){
+//          console.log(self.title, tag);
+//       })
+//    },
+// }
+// video.showTags();
   
 
+function extend(Child , Parent){
+   Child.prototype = Object.create(Parent.prototype);
+   Child.prototype.constructor = Child;
+}
+
+function Shape() {}
+
+Shape.prototype.duplicate = function () {
+  console.log("duplicate");
+};
+
+function Circle() {}
+
+extend(Circle, Shape); // ارث‌بری از Shape
+
+Circle.prototype.duplicate = function () {
+  Shape.prototype.duplicate.call(this); // صدا زدن متد پدر
+  console.log("duplicate circle");
+};
+
+const c = new Circle();
+c.duplicate(); 
