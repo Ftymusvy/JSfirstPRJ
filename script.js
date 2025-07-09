@@ -252,8 +252,8 @@
   
 
 function extend(Child , Parent){
-   Child.prototype = Object.create(Parent.prototype);
-   Child.prototype.constructor = Child;
+   Child.prototype = Object.create(Parent.prototype); //ارث‌بری متدها از پدر
+   Child.prototype.constructor = Child; //اصلاح ساختار برای شناسایی درست سازنده
 }
 
 function Shape() {}
