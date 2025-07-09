@@ -251,25 +251,43 @@
 // video.showTags();
   
 
-function extend(Child , Parent){
-   Child.prototype = Object.create(Parent.prototype); //ارث‌بری متدها از پدر
-   Child.prototype.constructor = Child; //اصلاح ساختار برای شناسایی درست سازنده
+// function extend(Child , Parent){
+//    Child.prototype = Object.create(Parent.prototype); //ارث‌بری متدها از پدر
+//    Child.prototype.constructor = Child; //اصلاح ساختار برای شناسایی درست سازنده
+// }
+
+// function Shape() {}
+
+// Shape.prototype.duplicate = function () {
+//   console.log("duplicate");
+// };
+
+// function Circle() {}
+
+// extend(Circle, Shape); // ارث‌بری از Shape
+
+// Circle.prototype.duplicate = function () {
+//   Shape.prototype.duplicate.call(this); // صدا زدن متد پدر
+//   console.log("duplicate circle");
+// };
+
+// const c = new Circle();
+// c.duplicate(); 
+
+
+class Circle {
+  constructor(radius) {
+    this.radius = radius;
+  }
+  //instance method
+  draw(){}
+  //static method
+  static parse(str) {
+    const radius = JSON.parse(str).radius;
+    return new Circle(radius);
+  }
 }
 
-function Shape() {}
+//circle.parse();
+const circle = Circle.parse('{"radius":1}');
 
-Shape.prototype.duplicate = function () {
-  console.log("duplicate");
-};
-
-function Circle() {}
-
-extend(Circle, Shape); // ارث‌بری از Shape
-
-Circle.prototype.duplicate = function () {
-  Shape.prototype.duplicate.call(this); // صدا زدن متد پدر
-  console.log("duplicate circle");
-};
-
-const c = new Circle();
-c.duplicate(); 
