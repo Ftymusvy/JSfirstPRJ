@@ -275,19 +275,37 @@
 // c.duplicate(); 
 
 
+// class Circle {
+//   constructor(radius) {
+//     this.radius = radius;
+//   }
+//   //instance method
+//   draw(){}
+//   //static method
+//   static parse(str) {
+//     const radius = JSON.parse(str).radius;
+//     return new Circle(radius);
+//   }
+// }
+
+// //circle.parse();
+// const circle = Circle.parse('{"radius":1}');
+
+const _radius = Symbol('radius');  // کلید یکتا برای radius
+const _draw = Symbol('draw');      // کلید یکتا برای متد draw
+
 class Circle {
   constructor(radius) {
-    this.radius = radius;
+    this[_radius] = radius;
   }
-  //instance method
-  draw(){}
-  //static method
-  static parse(str) {
-    const radius = JSON.parse(str).radius;
-    return new Circle(radius);
+
+  [_draw]() {
+    console.log('Drawing a circle');
   }
 }
 
-//circle.parse();
-const circle = Circle.parse('{"radius":1}');
+const c = new Circle(5);
 
+// دستیابی به ویژگی مخفی‌شده با Symbol:
+const key = Object.getOwnPropertySymbols(c)[0];
+console.log(c[key]);  // مقدار radius را چاپ می‌کند، یعنی 5
