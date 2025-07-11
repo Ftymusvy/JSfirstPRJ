@@ -291,21 +291,44 @@
 // //circle.parse();
 // const circle = Circle.parse('{"radius":1}');
 
-const _radius = Symbol('radius');  // کلید یکتا برای radius
-const _draw = Symbol('draw');      // کلید یکتا برای متد draw
+// const _radius = Symbol('radius');  // کلید یکتا برای radius
+// const _draw = Symbol('draw');      // کلید یکتا برای متد draw
+
+// class Circle {
+//   constructor(radius) {
+//     this[_radius] = radius;
+//   }
+
+//   [_draw]() {
+//     console.log('Drawing a circle');
+//   }
+// }
+
+// const c = new Circle(5);
+
+// // دستیابی به ویژگی مخفی‌شده با Symbol:
+// const key = Object.getOwnPropertySymbols(c)[0];
+// console.log(c[key]);  // مقدار radius را چاپ می‌کند، یعنی 5
+
+
+const _radius = new WeakMap();
+const _move = new WeakMap();
 
 class Circle {
   constructor(radius) {
-    this[_radius] = radius;
+    _radius.set(this, radius);
+    _move.set(this, function () {
+      console.log('move', this);
+    });
   }
 
-  [_draw]() {
-    console.log('Drawing a circle');
+  draw() {
+    // اجرای تابعی که در _move ذخیره شده
+    _move.get(this)();  // ⬅️ این خط نکته مهم داره
+    console.log('draw');
+    console.log(_radius.get(this));
   }
 }
 
-const c = new Circle(5);
-
-// دستیابی به ویژگی مخفی‌شده با Symbol:
-const key = Object.getOwnPropertySymbols(c)[0];
-console.log(c[key]);  // مقدار radius را چاپ می‌کند، یعنی 5
+const c = new Circle(1);
+c.draw();
