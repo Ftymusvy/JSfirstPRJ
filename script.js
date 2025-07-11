@@ -344,3 +344,27 @@ import {Circle}  from './circle.js'
 
 const c = new Circle(100);
 c.draw();
+
+
+
+
+
+
+function ball1(ball2) {
+  setTimeout(() => {
+    console.log('the ball one reached the end of the hill');
+    ball2(ball3); // callback
+  }, 2000);
+}
+function ball2(ball3) {
+  setTimeout(() => {
+    console.log('the ball two reached the end of the hill');
+    ball3(); // callback
+  }, 1000);
+}
+function ball3() {
+  setTimeout(() => {
+    console.log('the ball three reached the end of the hill');
+  }, 3000);
+}
+ball1(ball2);
