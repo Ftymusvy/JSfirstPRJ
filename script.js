@@ -311,24 +311,35 @@
 // console.log(c[key]);  // مقدار radius را چاپ می‌کند، یعنی 5
 
 
-const _radius = new WeakMap();
-const _move = new WeakMap();
+// const _radius = new WeakMap();
+// const _move = new WeakMap();
 
-class Circle {
-  constructor(radius) {
-    _radius.set(this, radius);
-    _move.set(this, function () {
-      console.log('move', this);
-    });
-  }
+// class Circle {
+//   constructor(radius) {
+//     _radius.set(this, radius);
+//     _move.set(this, function () {
+//       console.log('move', this);
+//     });
+//   }
 
-  draw() {
-    // اجرای تابعی که در _move ذخیره شده
-    _move.get(this)();  // ⬅️ این خط نکته مهم داره
-    console.log('draw');
-    console.log(_radius.get(this));
-  }
-}
+//   draw() {
+//     // اجرای تابعی که در _move ذخیره شده
+//     _move.get(this)();  // ⬅️ این خط نکته مهم داره
+//     console.log('draw');
+//     console.log(_radius.get(this));
+//   }
+// }
 
-const c = new Circle(1);
+
+
+
+
+
+
+
+
+
+const Circle = require('./circle')
+
+const c = new Circle(100);
 c.draw();
